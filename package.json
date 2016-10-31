@@ -1,0 +1,15 @@
+{
+  "name": "ngw-node",
+  "version": "1.0.0",
+  "description": "a node test",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "mongodb"
+  ],
+  "author": "yipf",
+  "license": "MIT"
+}
