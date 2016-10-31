@@ -11,4 +11,4 @@
   - data
   - log
 
-mongodb完整路径启动： ``` /home/cuiyukun/download/mongodb/bin/mongod --dbpath=/home/cuiyukun/mongodb/data --logpath /home/cuiyukun/mongodb/logs/log.log -fork ```
+mongodb绝对路径启动： ``` /home/cuiyukun/download/mongodb/bin/mongod --dbpath=/home/cuiyukun/mongodb/data --logpath /home/cuiyukun/mongodb/logs/log.log -fork ```
