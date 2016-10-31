@@ -16,3 +16,6 @@
  ``` /home/cuiyukun/download/mongodb/bin/mongod --dbpath=/home/cuiyukun/mongodb/data --logpath /home/cuiyukun/mongodb/logs/log.log -fork ```
 
 # [测试url](http://192.168.6.159:2333/) (需要链接vpn)
+
+# API
+  - get
