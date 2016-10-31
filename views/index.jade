@@ -1,6 +1,46 @@
 doctype html
 html
   head
-    title= title
+    meta(charset='utf-8')
+    title 牛股王test
+    link(rel='stylesheet', href='https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css')
   body
-    h1 hello,niuguwang
+    .container
+      .col-md-6.col-md-offset-3
+        #app
+          table.table.table-hover
+            thead
+              tr
+                th.text-right 序号
+                th.text-right 姓名
+                th.text-right 年龄
+                th.text-right 部门
+                th.text-right 操作
+            tbody
+              tr(v-for='item in users')
+                td.text-right {{$index}}
+                td.text-right {{item.name}}
+                td.text-right {{item.age}}
+                td.text-right {{item.part}}
+                td.text-right
+                  button.btn.btn-danger.btn-xs(type='button', @click='delUser(item._id)') 删除
+          div
+            form.form-horizontal(role='form')
+              .form-group
+                label.col-sm-2.control-label 姓名
+                .col-sm-10
+                  input.form-control(type='text', placeholder='姓名', v-model="user.name")
+              .form-group
+                label.col-sm-2.control-label 年龄
+                .col-sm-10
+                  input.form-control(type='number', placeholder='年龄', v-model="user.age")
+              .form-group
+                label.col-sm-2.control-label 部门
+                .col-sm-10
+                  input.form-control(type='text', placeholder='部门', v-model="user.part")
+              .form-group
+                .col-sm-offset-2.col-sm-10
+                  button.btn.btn-default(type='submit', @click="addUser()") 新增
+    script(src='http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js', charset='utf-8')
+    script(src='https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js', charset='utf-8')
+    script(type="application/javascript", src="/index.js")
