@@ -4,8 +4,9 @@ new Vue({
     this.getList();
   },
   data: {
-    user: {},
-    users: ''
+    user: '',
+    users: '',
+    search: ''
   },
   methods: {
     getList: function () {
@@ -18,6 +19,7 @@ new Vue({
     addUser: function () {
       this.$http.post('/users', this.user).then(function (res) {
         this.getList();
+        this.user = '';
       }, function (res) {
         console.log(res);
       });
@@ -28,6 +30,15 @@ new Vue({
       }, function (res) {
         console.log(res);
       });
+    },
+    findUser: function () {
+      alert(this.search)
+      this.$http.get('/users/opt=' + this.search).then(function (res) {
+        this.$set('users', res.body);
+        this.search = '';
+      }), function (res) {
+        console.log(res);
+      };
     }
   }
 });
